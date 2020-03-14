@@ -1,0 +1,7 @@
+src/__pycache__/
+
+creds.json
+
+tokens.json
+
+env/

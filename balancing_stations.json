@@ -1,0 +1,266 @@
+[
+    {
+        "category_id": 3390119,
+        "name": "Alcoa Power Generating, Inc. - Yadkin Division (YAD)"
+    },
+    {
+        "category_id": 3390120,
+        "name": "Arizona Public Service Company (AZPS)"
+    },
+    {
+        "category_id": 3390121,
+        "name": "Arlington Valley, LLC (DEAA)"
+    },
+    {
+        "category_id": 3390122,
+        "name": "Associated Electric Cooperative, Inc. (AECI)"
+    },
+    {
+        "category_id": 3390123,
+        "name": "Avangrid Renewables, LLC (AVRN)"
+    },
+    {
+        "category_id": 3390124,
+        "name": "Avista Corporation (AVA)"
+    },
+    {
+        "category_id": 3390125,
+        "name": "Balancing Authority of Northern California (BANC)"
+    },
+    {
+        "category_id": 3390126,
+        "name": "Bonneville Power Administration (BPAT)"
+    },
+    {
+        "category_id": 3390127,
+        "name": "California Independent System Operator (CISO)"
+    },
+    {
+        "category_id": 3390128,
+        "name": "City of Homestead (HST)"
+    },
+    {
+        "category_id": 3390129,
+        "name": "City of Tacoma, Department of Public Utilities, Light Division (TPWR)"
+    },
+    {
+        "category_id": 3390130,
+        "name": "City of Tallahassee (TAL)"
+    },
+    {
+        "category_id": 3390131,
+        "name": "Duke Energy Carolinas (DUK)"
+    },
+    {
+        "category_id": 3390132,
+        "name": "Duke Energy Florida, Inc. (FPC)"
+    },
+    {
+        "category_id": 3390133,
+        "name": "Duke Energy Progress East (CPLE)"
+    },
+    {
+        "category_id": 3390134,
+        "name": "Duke Energy Progress West (CPLW)"
+    },
+    {
+        "category_id": 3390135,
+        "name": "El Paso Electric Company (EPE)"
+    },
+    {
+        "category_id": 3390136,
+        "name": "Electric Energy, Inc. (EEI)"
+    },
+    {
+        "category_id": 3390137,
+        "name": "Electric Reliability Council of Texas, Inc. (ERCO)"
+    },
+    {
+        "category_id": 3390138,
+        "name": "Florida Municipal Power Pool (FMPP)"
+    },
+    {
+        "category_id": 3390139,
+        "name": "Florida Power & Light Co. (FPL)"
+    },
+    {
+        "category_id": 3390140,
+        "name": "Gainesville Regional Utilities (GVL)"
+    },
+    {
+        "category_id": 3390142,
+        "name": "Gridforce Energy Management, LLC (GRID)"
+    },
+    {
+        "category_id": 3390143,
+        "name": "Griffith Energy, LLC (GRIF)"
+    },
+    {
+        "category_id": 3390144,
+        "name": "ISO New England (ISNE)"
+    },
+    {
+        "category_id": 3390145,
+        "name": "Idaho Power Company (IPCO)"
+    },
+    {
+        "category_id": 3390146,
+        "name": "Imperial Irrigation District (IID)"
+    },
+    {
+        "category_id": 3390147,
+        "name": "JEA (JEA)"
+    },
+    {
+        "category_id": 3390148,
+        "name": "Los Angeles Department of Water and Power (LDWP)"
+    },
+    {
+        "category_id": 3390149,
+        "name": "Louisville Gas and Electric Company and Kentucky Utilities Company (LGEE)"
+    },
+    {
+        "category_id": 3390150,
+        "name": "Midcontinent Independent System Operator, Inc. (MISO)"
+    },
+    {
+        "category_id": 3390151,
+        "name": "NaturEner Power Watch, LLC (GWA)"
+    },
+    {
+        "category_id": 3390152,
+        "name": "NaturEner Wind Watch, LLC (WWA)"
+    },
+    {
+        "category_id": 3390153,
+        "name": "Nevada Power Company (NEVP)"
+    },
+    {
+        "category_id": 3390154,
+        "name": "New Harquahala Generating Company, LLC (HGMA)"
+    },
+    {
+        "category_id": 3390155,
+        "name": "New York Independent System Operator (NYIS)"
+    },
+    {
+        "category_id": 3390156,
+        "name": "NorthWestern Corporation (NWMT)"
+    },
+    {
+        "category_id": 3390157,
+        "name": "Ohio Valley Electric Corporation (OVEC)"
+    },
+    {
+        "category_id": 3390158,
+        "name": "PJM Interconnection, LLC (PJM)"
+    },
+    {
+        "category_id": 3390159,
+        "name": "PUD No. 1 of Douglas County (DOPD)"
+    },
+    {
+        "category_id": 3390160,
+        "name": "PacifiCorp East (PACE)"
+    },
+    {
+        "category_id": 3390161,
+        "name": "PacifiCorp West (PACW)"
+    },
+    {
+        "category_id": 3390162,
+        "name": "Portland General Electric Company (PGE)"
+    },
+    {
+        "category_id": 3390163,
+        "name": "PowerSouth Energy Cooperative (AEC)"
+    },
+    {
+        "category_id": 3390164,
+        "name": "Public Service Company of Colorado (PSCO)"
+    },
+    {
+        "category_id": 3390165,
+        "name": "Public Service Company of New Mexico (PNM)"
+    },
+    {
+        "category_id": 3390166,
+        "name": "Public Utility District No. 1 of Chelan County (CHPD)"
+    },
+    {
+        "category_id": 3390167,
+        "name": "Public Utility District No. 2 of Grant County, Washington (GCPD)"
+    },
+    {
+        "category_id": 3390168,
+        "name": "Puget Sound Energy, Inc. (PSEI)"
+    },
+    {
+        "category_id": 3390169,
+        "name": "Salt River Project Agricultural Improvement and Power District (SRP)"
+    },
+    {
+        "category_id": 3390170,
+        "name": "Seattle City Light (SCL)"
+    },
+    {
+        "category_id": 3390171,
+        "name": "Seminole Electric Cooperative (SEC)"
+    },
+    {
+        "category_id": 3390172,
+        "name": "South Carolina Electric & Gas Company (SCEG)"
+    },
+    {
+        "category_id": 3390173,
+        "name": "South Carolina Public Service Authority (SC)"
+    },
+    {
+        "category_id": 3390174,
+        "name": "Southeastern Power Administration (SEPA)"
+    },
+    {
+        "category_id": 3390175,
+        "name": "Southern Company Services, Inc. - Trans (SOCO)"
+    },
+    {
+        "category_id": 3390176,
+        "name": "Southwest Power Pool (SWPP)"
+    },
+    {
+        "category_id": 3390177,
+        "name": "Southwestern Power Administration (SPA)"
+    },
+    {
+        "category_id": 3390178,
+        "name": "Tampa Electric Company (TEC)"
+    },
+    {
+        "category_id": 3390179,
+        "name": "Tennessee Valley Authority (TVA)"
+    },
+    {
+        "category_id": 3390180,
+        "name": "Tucson Electric Power (TEPC)"
+    },
+    {
+        "category_id": 3390181,
+        "name": "Turlock Irrigation District (TIDC)"
+    },
+    {
+        "category_id": 3390182,
+        "name": "Utilities Commission of New Smyrna Beach (NSB)"
+    },
+    {
+        "category_id": 3390183,
+        "name": "Western Area Power Administration - Desert Southwest Region (WALC)"
+    },
+    {
+        "category_id": 3390184,
+        "name": "Western Area Power Administration - Rocky Mountain Region (WACM)"
+    },
+    {
+        "category_id": 3390185,
+        "name": "Western Area Power Administration - Upper Great Plains West (WAUW)"
+    }
+]
