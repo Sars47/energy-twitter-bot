@@ -3,7 +3,7 @@ The code repository for this [energy twitter bot](https://twitter.com/BotHourly)
 
 # Built using
 * [US Energy Information Administration's API](https://www.eia.gov/opendata/)
-* [Twweepy](https://www.tweepy.org/)
+* [Tweepy](https://www.tweepy.org/)
 
 # Got an idea for improvement?
 Contact the maintainers or open an issue
