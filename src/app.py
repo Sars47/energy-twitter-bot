@@ -43,7 +43,8 @@ def get_last_hour_data(sub_series_ids):
     energy source accoring to the energy dictionary passed in, mapping energy sources to MWh generated """
 def get_emoji_bars(energy_dict):
     emojis_string = ""
-    total_energy = sum(energy_dict.values())
+    # Sometimes - energy_dict's values contains both strings and ints
+    total_energy = sum(map( int, energy_dict.values()))
     if total_energy > 0:
         emojis_string += str(total_energy) + " MWh\n\n"
         for element in energy_dict.keys():
