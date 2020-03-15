@@ -1,10 +1,9 @@
 # EIA API 
-EIA_SERIES_ENDPOINT = 'http://api.eia.gov/series/?api_key='
-EIA_SERIES_END2 = '&series_id='
-EIA_CATEGORY_ENDPOINT = 'http://api.eia.gov/category/?api_key='
-EIA_CAT_END2 = '&category_id='
+EIA_SERIES_ENDPOINT = 'http://api.eia.gov/series'
+EIA_CATEGORY_ENDPOINT = 'http://api.eia.gov/category'
 
 # My own parameters
+# Used to ensure that the tweets stay below the 240 character limit
 MAX_EMOJIS_PER_TWEET = 30
 
 EMOJIS = {

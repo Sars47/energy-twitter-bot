@@ -28,7 +28,7 @@ def get_sub_series(sub_cats):
 def get_last_hour_data(sub_series_ids):
     last_hour_data ={}
     for sub_series in sub_series_ids:
-        data = requests.get(constant.EIA_SERIES_ENDPOINT + get_EIA_tok() + constant.EIA_SERIES_END2 + sub_series)
+        data = requests.get(constant.EIA_SERIES_ENDPOINT, params={'api_key': get_EIA_tok(), 'series_id': sub_series} )
         if data.status_code != 200: # ERROR TODO: Figure out error handling here
             print("failed to get data from a specific series")
         else:
@@ -63,8 +63,7 @@ def get_emoji_bars(energy_dict):
 def get_balancing_station():
     stations = json.load(open('../balancing_stations.json', "r"))
     station = random.choice(stations)
-    query = constant.EIA_CATEGORY_ENDPOINT + get_EIA_tok() + constant.EIA_CAT_END2 + str(station['category_id'])
-    resp = requests.get(query)
+    resp = requests.get( constant.EIA_CATEGORY_ENDPOINT, params={'api_key': get_EIA_tok(), 'category_id': str(station['category_id'])} )
     if resp.status_code == 200:
         return ( station['name'] + ": ", resp.text)
     else: # ERROR TODO: Figure out error handling here as well
@@ -85,6 +84,8 @@ last_hour_data = get_last_hour_data(series_ids)
 # Add the emoji bars to the final tweet
 final_tweet += get_emoji_bars(last_hour_data)
 
+print(final_tweet)
+
 # Authenticate twitter account
 tw_toks = get_twitter_toks()
 auth = tweepy.OAuthHandler(tw_toks['TWIT_CONSUMER_KEY'], tw_toks['TWIT_CONSUMER_SECRET'])
@@ -92,4 +93,4 @@ auth.set_access_token(tw_toks['TWIT_ACC_TOK'], tw_toks['TWIT_ACC_SEC'])
 api = tweepy.API(auth)
 
 # Send final tweet
-api.update_status(final_tweet)
+#api.update_status(final_tweet)
