@@ -8,7 +8,7 @@ MAX_EMOJIS_PER_TWEET = 30
 
 EMOJIS = {
     'coal' : '⚫️',
-    'natural gas' : '🛢️ ',
+    'natural gas' : '🔥',
     'nuclear' : '⚛️ ',
     'other' : '❓',
     'solar' : '🌞',
