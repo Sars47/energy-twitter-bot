@@ -83,8 +83,8 @@ def update_status():
     final_tweet += get_emoji_bars(last_hour_data)
     # Send final tweet
     try:
-        #api.update_status(final_tweet)
-        print(final_tweet)
+        api.update_status(final_tweet)
+        #print(final_tweet)
     except tweepy.error.RateLimitError:
         print("rate limit")    # Catches errors where something has gone wrong and we're tweeting too frequently
     except tweepy.TweepError as err:
