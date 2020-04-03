@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 import requests, json, random, re, math, constant, tweepy
 
+
 """ Getters for the API tokens for both the the EIA API App and Twitter account.
     You won't find these actual values anywhere in the repo - I removed them so nobody can do anything evil. """
 def get_EIA_tok():
@@ -48,16 +49,14 @@ def get_emoji_bars(energy_dict):
     if total_energy > 0:
         emojis_string += str(total_energy) + " MWh\n\n"
         for element in energy_dict.keys():
-            emoji_bar = ""
-            for _ in range(math.ceil(last_hour_data[element] / total_energy * constant.MAX_EMOJIS_PER_TWEET)):
-                emoji_bar += constant.EMOJIS[element]
-            if last_hour_data[element] != 0:
-                emojis_string += (element.capitalize() + ": " + str(last_hour_data[element]) + " MWh\n" + emoji_bar + "\n")
+            if energy_dict[element] > 0: # Removes negative energy counts
+                emoji_bar = ""
+                for _ in range(math.ceil(energy_dict[element] / total_energy * constant.MAX_EMOJIS_PER_TWEET)):
+                    emoji_bar += constant.EMOJIS[element]
+                emojis_string += (element.capitalize() + ": " + str(energy_dict[element]) + " MWh\n" + emoji_bar + "\n")
     else:
         emojis_string += "0 MWh\nNo energy generated in this balancing station location"
     return emojis_string
-
-
 
 """ Randomly chooses a balancing station from the list in the file balancing_stations.json and then returns
     that balancing stations name and the text of it's subcategories' json as a tuple. """
@@ -71,21 +70,30 @@ def get_balancing_station():
         return ("", "")
         #raise Exception("Failed to get data about the selected station: " + station['category_id']
 
+""" Continues attempting to update status until there is a tweet that is not a duplicate or a different error occurs
+"""
+def update_status():
+    # Choose a random balancing station, and get it's name and sub series information
+    (final_tweet, sub_series_text) = get_balancing_station()
+    # Get a list of subseries IDs, giving endpoints for each energy source in the balancing station of interest
+    series_ids = get_sub_series(json.loads(sub_series_text)) 
+    # Get the last hour's datapoint from each of those subseries API endpoints, returning a dictionary of energy -> MWh
+    last_hour_data = get_last_hour_data(series_ids) 
+    # Add the emoji bars to the final tweet
+    final_tweet += get_emoji_bars(last_hour_data)
+    # Send final tweet
+    try:
+        #api.update_status(final_tweet)
+        print(final_tweet)
+    except tweepy.error.RateLimitError:
+        print("rate limit")    # Catches errors where something has gone wrong and we're tweeting too frequently
+    except tweepy.TweepError as err:
+        pass
+        if err.args[0][0]['code'] == 187: # Catches duplicated tweet error, simply making a new tweet
+            update_status()
+        else:
+            print(err)
 
-
-# Choose a random balancing station, and get it's name and sub series information
-(final_tweet, sub_series_text) = get_balancing_station()
-    
-# Get a list of subseries IDs, giving endpoints for each energy source in the balancing station of interest
-series_ids = get_sub_series(json.loads(sub_series_text)) 
-    
-# Get the last hour's datapoint from each of those subseries API endpoints, returning a dictionary of energy -> MWh
-last_hour_data = get_last_hour_data(series_ids) 
-
-# Add the emoji bars to the final tweet
-final_tweet += get_emoji_bars(last_hour_data)
-
-print(final_tweet)
 
 # Authenticate twitter account
 tw_toks = get_twitter_toks()
@@ -93,5 +101,4 @@ auth = tweepy.OAuthHandler(tw_toks['TWIT_CONSUMER_KEY'], tw_toks['TWIT_CONSUMER_
 auth.set_access_token(tw_toks['TWIT_ACC_TOK'], tw_toks['TWIT_ACC_SEC'])
 api = tweepy.API(auth)
 
-# Send final tweet
-#api.update_status(final_tweet)
+update_status()
