@@ -10,14 +10,15 @@ import constant
 
 
 def get_eia_tok():
-    """ Getters for the API tokens for both the the EIA API App and Twitter account.
-    You won't find these actual values anywhere in the repo -
+    """ Getter for the EIA API token. You won't find these actual values anywhere in the repo -
     I removed them so nobody can do anything evil. """
     creds_data = json.load(open('../tokens.json', "r"))
     return creds_data['EIA_API_KEY']
 
 
 def get_twitter_toks():
+    """ Getter for the Twitter API token. You won't find these actual values anywhere in the repo -
+    I removed them so nobody can do anything evil. """
     creds_data = json.load(open('../tokens.json', "r"))
     del creds_data['EIA_API_KEY']
     return creds_data
@@ -103,7 +104,7 @@ def update_status():
     # Send final tweet
     try:
         api.update_status(final_tweet)
-        #print(final_tweet)
+        # print(final_tweet)
     except tweepy.error.RateLimitError:
         # Catches errors where something has gone wrong and we're tweeting too frequently
         print("rate limit")
