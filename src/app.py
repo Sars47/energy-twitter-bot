@@ -42,7 +42,7 @@ def get_last_hour_data(sub_series_ids):
         params = {'api_key': get_eia_tok(), 'series_id': sub_series}
         data = requests.get(constant.EIA_SERIES_ENDPOINT, params=params)
         if data.status_code != 200: # ERROR TODO: Figure out error handling here
-            print("failed to get data from a specific series")
+            raise Exception("failed to get data from a specific series: " + sub_series)
         else:
             data = json.loads(data.text)
             source_re = re.compile("Net generation from (.*) for ")
@@ -85,9 +85,7 @@ def get_balancing_station():
     resp = requests.get(constant.EIA_CATEGORY_ENDPOINT, params=params)
     if resp.status_code == 200:
         return (station['name'] + ": ", resp.text)
-    # ERROR TODO: Figure out error handling here as well
-    return ("", "")
-        #raise Exception("Failed to get data about the selected station: " + station['category_id']
+    raise Exception("Failed to get data about the selected station: " + station['category_id'])
 
 
 def update_status():
@@ -103,8 +101,8 @@ def update_status():
     final_tweet += get_emoji_bars(last_hour_data)
     # Send final tweet
     try:
-        api.update_status(final_tweet)
-        # print(final_tweet)
+        # api.update_status(final_tweet)
+        print(final_tweet)
     except tweepy.error.RateLimitError:
         # Catches errors where something has gone wrong and we're tweeting too frequently
         print("rate limit")
